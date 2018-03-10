@@ -16,6 +16,12 @@
 	} else {
 		[btn setTitle: tag.text forState:UIControlStateNormal];
 		[btn setTitleColor: tag.textColor forState: UIControlStateNormal];
+        if (tag.selectedTextColor) {
+            [btn setTitleColor:tag.selectedTextColor forState:UIControlStateSelected];
+        }
+        if (tag.highlightedTextColor) {
+            [btn setTitleColor:tag.highlightedTextColor forState:UIControlStateHighlighted];
+        }
 		btn.titleLabel.font = tag.font ?: [UIFont systemFontOfSize: tag.fontSize];
 	}
 	
@@ -39,6 +45,9 @@
     if (tag.enable) {
         UIColor *highlightedBgColor = tag.highlightedBgColor ?: [self darkerColor:btn.backgroundColor];
         [btn setBackgroundImage:[self imageWithColor:highlightedBgColor] forState:UIControlStateHighlighted];
+        if (tag.selectedBgColor) {
+            [btn setBackgroundImage:[self imageWithColor:tag.selectedBgColor] forState:UIControlStateSelected];
+        }
     }
     
     btn.layer.cornerRadius = tag.cornerRadius;

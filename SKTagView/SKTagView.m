@@ -155,6 +155,19 @@
 #pragma mark - IBActions
 
 - (void)onTag: (UIButton *)btn {
+    if (self.isSelectable) {
+        btn.selected = !btn.selected;
+        if (!self.supportMultipleSelection && btn.isSelected) {
+            [self.subviews enumerateObjectsUsingBlock:^(SKTagButton * _Nonnull aTagButton, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (aTagButton == btn) {
+                    return;
+                } else {
+                    aTagButton.selected = NO;
+                }
+            }];
+        }
+    }
+
     if (self.didTapTagAtIndex) {
         self.didTapTagAtIndex([self.subviews indexOfObject: btn]);
     }

@@ -9,11 +9,16 @@
 @interface SKTag : NSObject
 
 @property (copy, nonatomic, nullable) NSString *text;
-@property (copy, nonatomic, nullable) NSAttributedString *attributedText;
+@property (copy, nonatomic, nullable) NSAttributedString *attributedText DEPRECATED_ATTRIBUTE;
+
 @property (strong, nonatomic, nullable) UIColor *textColor;
+@property (strong, nonatomic, nullable) UIColor *highlightedTextColor;
+@property (strong, nonatomic, nullable) UIColor *selectedTextColor;
 ///backgound color
 @property (strong, nonatomic, nullable) UIColor *bgColor;
 @property (strong, nonatomic, nullable) UIColor *highlightedBgColor;
+@property (strong, nonatomic, nullable) UIColor *selectedBgColor;
+
 ///background image
 @property (strong, nonatomic, nullable) UIImage *bgImg;
 @property (assign, nonatomic) CGFloat cornerRadius;
