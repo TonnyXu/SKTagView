@@ -15,7 +15,7 @@
 @property (assign, nonatomic) CGFloat interitemSpacing;
 @property (assign, nonatomic) CGFloat preferredMaxLayoutWidth;
 @property (assign, nonatomic) BOOL singleLine;
-@property (copy, nonatomic, nullable) void (^didTapTagAtIndex)(NSUInteger index);
+@property (copy, nonatomic, nullable) void (^didTapTagAtIndex)(NSInteger index);
 
 @property (nonatomic, assign) BOOL isSelectable;
 @property (nonatomic, assign) BOOL supportMultipleSelection;
