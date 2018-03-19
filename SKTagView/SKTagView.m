@@ -186,7 +186,7 @@
     [self invalidateIntrinsicContentSize];
 }
 
-- (void)insertTag: (SKTag *)tag atIndex: (NSUInteger)index {
+- (void)insertTag: (SKTag *)tag atIndex: (NSInteger)index {
     NSParameterAssert(tag);
     if (index + 1 > self.tags.count) {
         [self addTag: tag];
@@ -217,7 +217,7 @@
     [self invalidateIntrinsicContentSize];
 }
 
-- (void)removeTagAtIndex: (NSUInteger)index {
+- (void)removeTagAtIndex: (NSInteger)index {
     if (index + 1 > self.tags.count) {
         return;
     }
@@ -239,6 +239,18 @@
     
     self.didSetup = NO;
     [self invalidateIntrinsicContentSize];
+}
+
+- (nullable SKTagButton *)tagButtonAtIndex:(NSInteger)index
+{
+    if (index >= self.tags.count || index < 0 ) { return nil; }
+    return (SKTagButton *)self.subviews[index];
+}
+
+- (void)selectTagAtIndex:(NSInteger)index
+{
+    SKTagButton *button = [self tagButtonAtIndex:index];
+    button.selected = YES;
 }
 
 @end

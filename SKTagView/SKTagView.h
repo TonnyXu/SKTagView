@@ -21,10 +21,11 @@
 @property (nonatomic, assign) BOOL supportMultipleSelection;
 
 - (void)addTag: (nonnull SKTag *)tag;
-- (void)insertTag: (nonnull SKTag *)tag atIndex:(NSUInteger)index;
+- (void)insertTag: (nonnull SKTag *)tag atIndex:(NSInteger)index;
 - (void)removeTag: (nonnull SKTag *)tag;
-- (void)removeTagAtIndex: (NSUInteger)index;
+- (void)removeTagAtIndex: (NSInteger)index;
 - (void)removeAllTags;
 
+- (void)selectTagAtIndex:(NSInteger)index;
 @end
 
