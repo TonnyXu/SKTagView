@@ -253,4 +253,11 @@
     button.selected = YES;
 }
 
+- (void)deselectTagAtIndex:(NSInteger)index
+{
+    SKTagButton *button = [self tagButtonAtIndex:index];
+    button.selected = NO;
+}
+
+
 @end
