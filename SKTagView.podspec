@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "Shaokang Zhao" => "zsk425@hotmail.com" }
   s.ios.deployment_target = "7.0"
-  s.source       = { :git => "https://github.com/TonnyXu/SKTagView.git", :tag => "0.9.3" }
+  s.source       = { :git => "https://github.com/TonnyXu/SKTagView.git", :tag => "0.9.4" }
   s.source_files  = "SKTagView/*"
   s.framework  = "UIKit", "Foundation"
   s.requires_arc = true
